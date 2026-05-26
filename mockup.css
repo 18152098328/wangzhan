@@ -163,7 +163,8 @@ footer b {
   align-items: center;
 }
 
-.promo-row div {
+.promo-row div,
+.promo-row a {
   min-height: 58px;
   display: grid;
   align-content: center;
@@ -174,7 +175,8 @@ footer b {
   position: relative;
 }
 
-.promo-row div::before {
+.promo-row div::before,
+.promo-row a::before {
   content: "";
   position: absolute;
   left: 18px;
@@ -249,7 +251,8 @@ footer b {
 
 .hero-main a,
 .hero-small a,
-.banner-pair span {
+.banner-pair span,
+.banner-pair a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -357,9 +360,14 @@ footer b {
 
 .category-list article {
   min-height: 116px;
-  padding: 15px;
   background: #fbfcfa;
   border-radius: 6px;
+}
+
+.category-list article > a {
+  display: block;
+  min-height: 116px;
+  padding: 15px;
 }
 
 .category-list b,
@@ -389,10 +397,15 @@ footer b {
 
 .cards article {
   min-height: 236px;
-  padding: 12px;
   background: #fff;
   border: 1px solid #e9eee6;
   border-radius: 8px;
+}
+
+.cards article > a {
+  display: block;
+  min-height: 236px;
+  padding: 12px;
 }
 
 .cards img {
