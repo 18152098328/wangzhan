@@ -306,7 +306,8 @@ footer b {
   background: #fff;
 }
 
-.benefit-strip span {
+.benefit-strip span,
+.benefit-strip a {
   display: grid;
   place-items: center;
   height: 34px;
@@ -316,7 +317,8 @@ footer b {
   font-weight: 700;
 }
 
-.benefit-strip span:last-child {
+.benefit-strip span:last-child,
+.benefit-strip a:last-child {
   border-right: 0;
 }
 
