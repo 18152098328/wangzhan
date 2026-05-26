@@ -22,6 +22,11 @@ body {
   font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .side-rail {
   position: fixed;
   left: 0;
@@ -116,13 +121,18 @@ footer b {
   font-size: 10px;
 }
 
-.nav button {
+.nav button,
+.category-button {
   height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   border-radius: 18px;
   color: #fff;
   background: var(--green);
   font-weight: 700;
+  text-decoration: none;
 }
 
 .search {
@@ -496,6 +506,101 @@ footer b {
   background: #eef7ee;
   border-radius: 7px;
   font-weight: 800;
+}
+
+.service-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  min-height: 255px;
+  margin: 24px 0 52px;
+  overflow: hidden;
+  background: #dceecb;
+  border-radius: 8px;
+}
+
+.service-hero div {
+  padding: 42px 0 0 36px;
+}
+
+.service-hero p {
+  margin: 0 0 14px;
+  color: var(--deep);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.service-hero h1 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 34px;
+  line-height: 1.15;
+}
+
+.service-hero span {
+  display: block;
+  max-width: 420px;
+  margin-top: 16px;
+  color: #41515a;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.service-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.88;
+}
+
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.directory-grid article {
+  min-height: 205px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.directory-grid span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 25px;
+  color: var(--deep);
+  background: #e8f5e6;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.directory-grid h3 {
+  margin: 18px 0 10px;
+  color: var(--navy);
+  font-size: 19px;
+  line-height: 1.28;
+}
+
+.directory-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.directory-grid b {
+  display: block;
+  margin-top: 14px;
+  color: var(--deep);
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 footer {
