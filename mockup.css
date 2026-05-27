@@ -118,6 +118,10 @@ footer {
 .steps span,
 .directory-grid article,
 .course-timeline article,
+.course-overview article,
+.course-module-list article,
+.course-methods article,
+.course-deliverables article,
 .course-gains article,
 .course-audience article,
 .course-actions a,
@@ -669,6 +673,9 @@ footer .join:hover {
 .metrics article:hover,
 .directory-grid article:hover,
 .course-timeline article:hover,
+.course-module-list article:hover,
+.course-methods article:hover,
+.course-deliverables article:hover,
 .course-gains article:hover,
 .course-audience article:hover {
   transform: translateY(-4px);
@@ -899,6 +906,41 @@ footer .join:hover {
   margin-bottom: 44px;
 }
 
+.course-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.course-overview article {
+  min-height: 128px;
+  padding: 22px;
+  color: #fff;
+  background: linear-gradient(135deg, #2f83b7, #173d68);
+  border-radius: 10px;
+}
+
+.course-overview span {
+  display: block;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.course-overview strong {
+  display: block;
+  margin-top: 14px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.course-overview p {
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .course-timeline {
   display: grid;
   gap: 16px;
@@ -965,6 +1007,121 @@ footer .join:hover {
   line-height: 1.72;
   overflow-wrap: anywhere;
   word-break: break-all;
+}
+
+.course-module-list {
+  display: grid;
+  gap: 16px;
+}
+
+.course-module-list article {
+  display: grid;
+  grid-template-columns: 0.42fr 1fr;
+  gap: 22px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.course-module-list article > div,
+.course-module-list ul {
+  min-width: 0;
+}
+
+.course-module-list span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 14px;
+  color: #2f83b7;
+  background: #e7f3fb;
+  border-radius: 18px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.course-module-list h3 {
+  margin: 18px 0 0;
+  color: var(--navy);
+  font-size: 22px;
+  line-height: 1.28;
+}
+
+.course-module-list p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.course-module-list ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-module-list li {
+  position: relative;
+  padding: 13px 16px 13px 34px;
+  color: #465568;
+  background: #fbfcfa;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.course-module-list li::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 22px;
+  width: 7px;
+  height: 7px;
+  background: #2f83b7;
+  border-radius: 50%;
+}
+
+.course-methods,
+.course-deliverables {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.course-methods article,
+.course-deliverables article {
+  min-height: 132px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.course-methods b {
+  display: block;
+  color: var(--navy);
+  font-size: 18px;
+}
+
+.course-methods p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.course-deliverables article {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
 }
 
 .course-gains,
@@ -1222,6 +1379,16 @@ footer .join:hover {
     grid-template-columns: 1fr;
   }
 
+  .course-overview,
+  .course-methods,
+  .course-deliverables {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-module-list article {
+    grid-template-columns: 1fr;
+  }
+
   .course-gains,
   .course-audience {
     grid-template-columns: repeat(2, 1fr);
@@ -1357,6 +1524,9 @@ footer .join:hover {
   .about-block,
   .service-hero,
   .directory-grid,
+  .course-overview,
+  .course-methods,
+  .course-deliverables,
   .course-gains,
   .course-audience,
   footer {
@@ -1427,6 +1597,9 @@ footer .join:hover {
   }
 
   .course-timeline article,
+  .course-module-list article,
+  .course-methods article,
+  .course-deliverables article,
   .course-gains article,
   .course-audience article,
   .course-cta {
@@ -1473,6 +1646,9 @@ footer .join:hover {
   .steps span:hover,
   .directory-grid article:hover,
   .course-timeline article:hover,
+  .course-module-list article:hover,
+  .course-methods article:hover,
+  .course-deliverables article:hover,
   .course-gains article:hover,
   .course-audience article:hover,
   .course-actions a:hover,
@@ -1539,6 +1715,9 @@ footer .join:hover {
   .steps span:hover,
   .directory-grid article:hover,
   .course-timeline article:hover,
+  .course-module-list article:hover,
+  .course-methods article:hover,
+  .course-deliverables article:hover,
   .course-gains article:hover,
   .course-audience article:hover,
   .course-actions a:hover,

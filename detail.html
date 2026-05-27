@@ -314,6 +314,49 @@
           ],
           gains: ["真实账号完成配置", "形成获客渠道动作表", "完成客户开发素材", "建立询盘跟进机制", "沉淀销售SOP", "形成团队管理复盘机制"],
           audience: ["外贸负责人、销售主管、运营负责人", "老板已定方向但团队执行不稳定的企业", "需要建立获客到成交SOP的团队", "希望集中提升实操能力的企业"],
+          overview: [
+            ["周期", "28天", "阶段任务制陪跑"],
+            ["对象", "高管团队", "外贸负责人和核心执行岗"],
+            ["方式", "实操陪跑", "真实账号、真实任务、真实反馈"],
+            ["目标", "落地SOP", "形成获客、成交、管理闭环"]
+          ],
+          modulesTitle: "详细课程内容",
+          modules: [
+            {
+              title: "外贸基础与执行环境",
+              desc: "先把团队的基础认知、账号环境和资料体系搭好，避免后续执行卡在工具、权限和素材上。",
+              items: ["企业产品定位与目标市场判断", "客户画像、应用场景与采购链路梳理", "邮箱、社媒账号、浏览器、翻译与AI工具配置", "产品资料、卖点话术、图片视频素材整理"]
+            },
+            {
+              title: "搜索获客与数据开发",
+              desc: "围绕 Google、海关数据、关键词库和独立站，让团队掌握可重复执行的客户开发方法。",
+              items: ["Google主动搜索与高级检索语法", "海关数据筛选、客户背调和名单清洗", "关键词库搭建、SEO/GEO内容方向", "客户信息提取插件与表格沉淀"]
+            },
+            {
+              title: "社媒矩阵与内容获客",
+              desc: "训练团队理解海外社媒平台逻辑，建立 Facebook、LinkedIn、TikTok 等渠道的基础获客动作。",
+              items: ["Facebook主页与内容发布基础", "LinkedIn客户搜索、加人和私信动作", "TikTok B端内容方向与基础运营逻辑", "社媒内容选题、素材准备和发布节奏"]
+            },
+            {
+              title: "询盘跟进与成交转化",
+              desc: "把线索变成可跟进客户，训练报价、邮件、样品、合同、付款和风险节点处理。",
+              items: ["询盘质量判断和客户需求拆解", "报价策略、邮件模板和跟进节奏", "样品、合同、物流、单证和付款节点", "CRM客户分层、阶段记录和复盘机制"]
+            },
+            {
+              title: "团队管理与SOP沉淀",
+              desc: "让负责人能够带队执行，而不是只靠个人经验推动外贸业务。",
+              items: ["外贸岗位职责和团队分工", "KPI、日报、周报和会议机制", "销售SOP、客户开发SOP和复盘表", "阶段成果验收与下一步执行计划"]
+            }
+          ],
+          methodTitle: "陪跑方式",
+          methods: [
+            ["任务驱动", "每个阶段拆成可执行任务，避免只听课不落地。"],
+            ["真实演练", "围绕企业产品、账号、客户和素材进行实操。"],
+            ["反馈复盘", "老师根据执行情况给出调整建议和优化方向。"],
+            ["结果沉淀", "把课程动作沉淀为企业自己的表格、话术和SOP。"]
+          ],
+          deliverablesTitle: "最终交付",
+          deliverables: ["外贸获客渠道动作表", "关键词库与客户开发名单", "社媒内容和客户沟通素材", "询盘跟进与客户分层表", "外贸团队SOP与KPI建议", "28天阶段复盘和后续计划"],
           ctaTitle: "预约28天高管陪跑课",
           ctaText: "让负责人和执行团队在真实任务中完成获客、跟进、成交和管理动作。"
         }
@@ -348,6 +391,20 @@
             <img src="${data.image}" alt="${data.kicker}" />
           </section>
 
+          ${data.overview ? `
+            <section class="panel course-section">
+              <div class="course-overview">
+                ${data.overview.map(item => `
+                  <article>
+                    <span>${item[0]}</span>
+                    <strong>${item[1]}</strong>
+                    <p>${item[2]}</p>
+                  </article>
+                `).join("")}
+              </div>
+            </section>
+          ` : ""}
+
           <section class="panel course-section">
             <div class="section-title">
               <h2>${data.stagesTitle}</h2>
@@ -373,6 +430,46 @@
             </div>
           </section>
 
+          ${data.modules ? `
+            <section class="panel course-section">
+              <div class="section-title">
+                <h2>${data.modulesTitle || "详细课程内容"}</h2>
+                <a href="detail.html?page=contact">获取完整课表</a>
+              </div>
+              <div class="course-module-list">
+                ${data.modules.map((module, index) => `
+                  <article>
+                    <div>
+                      <span>${String(index + 1).padStart(2, "0")}</span>
+                      <h3>${module.title}</h3>
+                      <p>${module.desc}</p>
+                    </div>
+                    <ul>
+                      ${module.items.map(item => `<li>${item}</li>`).join("")}
+                    </ul>
+                  </article>
+                `).join("")}
+              </div>
+            </section>
+          ` : ""}
+
+          ${data.methods ? `
+            <section class="panel course-section">
+              <div class="section-title">
+                <h2>${data.methodTitle || "课程方式"}</h2>
+                <a href="detail.html?page=contact">预约诊断</a>
+              </div>
+              <div class="course-methods">
+                ${data.methods.map(item => `
+                  <article>
+                    <b>${item[0]}</b>
+                    <p>${item[1]}</p>
+                  </article>
+                `).join("")}
+              </div>
+            </section>
+          ` : ""}
+
           <section class="panel course-section">
             <div class="section-title">
               <h2>学完获得</h2>
@@ -382,6 +479,18 @@
               ${data.gains.map(item => `<article><span></span><b>${item}</b></article>`).join("")}
             </div>
           </section>
+
+          ${data.deliverables ? `
+            <section class="panel course-section">
+              <div class="section-title">
+                <h2>${data.deliverablesTitle || "最终交付"}</h2>
+                <a href="detail.html?page=join">加入俱乐部</a>
+              </div>
+              <div class="course-deliverables">
+                ${data.deliverables.map(item => `<article>${item}</article>`).join("")}
+              </div>
+            </section>
+          ` : ""}
 
           <section class="panel course-section">
             <div class="section-title">
