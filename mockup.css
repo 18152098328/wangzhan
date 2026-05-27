@@ -411,9 +411,13 @@ footer .join:hover {
 }
 
 .hero-main img {
-  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
   height: 100%;
-  object-fit: contain;
+  max-width: none;
+  object-fit: unset;
   mix-blend-mode: multiply;
   opacity: 0.85;
   background: #dceecb;
@@ -1300,7 +1304,11 @@ footer .join:hover {
   }
 
   .hero-main img {
-    height: 190px;
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: unset;
+    background: #dceecb;
   }
 
   .hero-small {
