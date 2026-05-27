@@ -412,7 +412,7 @@ footer .join:hover {
 
 .hero-main img {
   position: absolute;
-  right: 0;
+  right: -118px;
   top: 0;
   width: auto;
   height: 100%;
