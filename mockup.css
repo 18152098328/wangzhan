@@ -54,6 +54,9 @@ a {
 .banner-pair,
 .about-block,
 .service-hero,
+.course-hero,
+.course-section,
+.course-cta,
 footer {
   animation: soft-enter 0.68s var(--motion-ease) both;
 }
@@ -114,6 +117,11 @@ footer {
 .metrics article,
 .steps span,
 .directory-grid article,
+.course-timeline article,
+.course-gains article,
+.course-audience article,
+.course-actions a,
+.course-cta a,
 footer a {
   transition:
     transform 0.25s var(--motion-ease),
@@ -655,7 +663,10 @@ footer .join:hover {
 }
 
 .metrics article:hover,
-.directory-grid article:hover {
+.directory-grid article:hover,
+.course-timeline article:hover,
+.course-gains article:hover,
+.course-audience article:hover {
   transform: translateY(-4px);
   border-color: rgba(115, 173, 81, 0.42);
   box-shadow: var(--motion-shadow);
@@ -776,6 +787,266 @@ footer .join:hover {
 
 .service-hero:hover img {
   transform: scale(1.03);
+}
+
+.course-actions a:hover,
+.course-cta a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(23, 99, 73, 0.2);
+}
+
+.course-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 20px;
+  max-width: 100%;
+  min-height: 320px;
+  margin: 24px 0 52px;
+  overflow: hidden;
+  color: #fff;
+  background: #102238;
+  border-radius: 10px;
+}
+
+.course-hero > * {
+  min-width: 0;
+}
+
+.course-hero.green {
+  background: linear-gradient(135deg, rgba(23, 99, 73, 0.96), rgba(20, 35, 57, 0.88));
+}
+
+.course-hero.blue {
+  background: linear-gradient(135deg, rgba(35, 112, 164, 0.96), rgba(20, 35, 57, 0.9));
+}
+
+.course-hero div {
+  min-width: 0;
+  padding: 46px 0 42px 38px;
+}
+
+.course-hero p {
+  margin: 0 0 16px;
+  color: #dff1df;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.course-hero h1 {
+  width: 100%;
+  max-width: 470px;
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.16;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+.course-hero span {
+  display: block;
+  width: 100%;
+  max-width: 485px;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+.course-hero img {
+  display: block;
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.82;
+}
+
+.course-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 0 !important;
+}
+
+.course-actions a,
+.course-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 20px;
+  color: #fff;
+  background: var(--green);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.course-actions .ghost {
+  color: var(--deep);
+  background: #fff;
+}
+
+.course-section {
+  margin-bottom: 44px;
+}
+
+.course-timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.course-timeline article {
+  display: grid;
+  grid-template-columns: 0.34fr 1fr;
+  gap: 18px;
+  max-width: 100%;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.course-timeline article > * {
+  min-width: 0;
+}
+
+.course-stage-head span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 14px;
+  color: var(--deep);
+  background: #e8f5e6;
+  border-radius: 18px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.course-stage-head h3 {
+  margin: 16px 0 0;
+  color: var(--navy);
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.course-blocks {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.course-blocks div {
+  min-width: 0;
+  padding: 14px 16px;
+  background: #fbfcfa;
+  border-radius: 8px;
+}
+
+.course-blocks b {
+  display: block;
+  color: var(--deep);
+  font-size: 13px;
+}
+
+.course-blocks p {
+  margin: 8px 0 0;
+  color: #536172;
+  font-size: 13px;
+  line-height: 1.72;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+.course-gains,
+.course-audience {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.course-gains article,
+.course-audience article {
+  min-height: 96px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.course-gains span {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-bottom: 18px;
+  background: var(--deep);
+  border-radius: 50%;
+}
+
+.course-gains b {
+  display: block;
+  color: var(--navy);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.course-audience strong {
+  display: block;
+  color: var(--deep);
+  font-size: 22px;
+}
+
+.course-audience p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.course-cta {
+  margin: 0 0 54px;
+  padding: 34px;
+  color: #fff;
+  background: var(--deep);
+  border-radius: 10px;
+}
+
+.course-cta.blue {
+  background: linear-gradient(135deg, #2f83b7, #173d68);
+}
+
+.course-cta.green {
+  background: linear-gradient(135deg, #176349, #315944);
+}
+
+.course-cta h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.course-cta p {
+  max-width: 620px;
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.course-cta div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.course-cta a:last-child {
+  color: var(--deep);
+  background: #fff;
 }
 
 .directory-grid {
@@ -931,6 +1202,27 @@ footer .join:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .course-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .course-hero div {
+    padding-right: 34px;
+  }
+
+  .course-hero img {
+    height: 260px;
+  }
+
+  .course-timeline article {
+    grid-template-columns: 1fr;
+  }
+
+  .course-gains,
+  .course-audience {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   footer {
     grid-template-columns: 1.2fr 0.8fr 1fr;
     gap: 28px;
@@ -1057,6 +1349,8 @@ footer .join:hover {
   .about-block,
   .service-hero,
   .directory-grid,
+  .course-gains,
+  .course-audience,
   footer {
     grid-template-columns: 1fr;
   }
@@ -1096,6 +1390,49 @@ footer .join:hover {
     height: 210px;
   }
 
+  .course-hero {
+    min-height: auto;
+  }
+
+  .course-hero div {
+    padding: 34px 24px 26px;
+    max-width: calc(100vw - 24px);
+  }
+
+  .course-hero h1 {
+    max-width: 300px;
+    font-size: 28px;
+  }
+
+  .course-hero span {
+    max-width: 300px;
+    font-size: 13px;
+  }
+
+  .course-blocks b,
+  .course-blocks p {
+    max-width: 300px;
+  }
+
+  .course-hero img {
+    height: 210px;
+  }
+
+  .course-timeline article,
+  .course-gains article,
+  .course-audience article,
+  .course-cta {
+    padding: 22px;
+  }
+
+  .course-blocks div {
+    padding: 14px;
+  }
+
+  .course-cta h2 {
+    font-size: 25px;
+  }
+
   .directory-grid article {
     min-height: 0;
   }
@@ -1127,6 +1464,11 @@ footer .join:hover {
   .metrics article:hover,
   .steps span:hover,
   .directory-grid article:hover,
+  .course-timeline article:hover,
+  .course-gains article:hover,
+  .course-audience article:hover,
+  .course-actions a:hover,
+  .course-cta a:hover,
   footer a:hover,
   footer .join:hover {
     transform: none;
@@ -1159,6 +1501,9 @@ footer .join:hover {
   .banner-pair,
   .about-block,
   .service-hero,
+  .course-hero,
+  .course-section,
+  .course-cta,
   footer {
     animation: none !important;
     opacity: 1 !important;
@@ -1185,6 +1530,11 @@ footer .join:hover {
   .metrics article:hover,
   .steps span:hover,
   .directory-grid article:hover,
+  .course-timeline article:hover,
+  .course-gains article:hover,
+  .course-audience article:hover,
+  .course-actions a:hover,
+  .course-cta a:hover,
   footer a:hover,
   footer .join:hover,
   .cards article:hover img,
@@ -1215,6 +1565,16 @@ footer .join:hover {
 
   .hero-main h1 {
     font-size: 31px;
+  }
+
+  .course-hero h1,
+  .course-hero span,
+  .course-blocks p {
+    max-width: 280px;
+  }
+
+  .course-blocks b {
+    max-width: 280px;
   }
 
   .hero-main span,

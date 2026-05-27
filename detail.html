@@ -10,7 +10,7 @@
     <aside class="side-rail" aria-hidden="true">
       <div class="menu-dot">☰</div>
       <span>⌂</span>
-      <span>◌</span>
+      <span>○</span>
       <span>✦</span>
       <span>◎</span>
       <span>▣</span>
@@ -45,43 +45,7 @@
     </header>
 
     <main>
-      <section class="service-hero">
-        <div>
-          <p id="detail-kicker">业务详情</p>
-          <h1 id="detail-title">麦总出海俱乐部服务详情</h1>
-          <span id="detail-summary">围绕企业出海的课程、服务、资源和落地路径，提供可执行的一站式解决方案。</span>
-        </div>
-        <img id="detail-image" src="assets/web/global-data.jpg" alt="业务详情" />
-      </section>
-
-      <section class="panel service-directory">
-        <div class="section-title">
-          <h2>服务内容</h2>
-          <a href="index.html">返回首页</a>
-        </div>
-        <div class="directory-grid" id="detail-grid"></div>
-      </section>
-
-      <section class="panel shelf">
-        <div class="section-title">
-          <h2>适合对象</h2>
-          <a href="detail.html?page=join">加入俱乐部</a>
-        </div>
-        <div class="metrics" id="detail-audience"></div>
-      </section>
-
-      <section class="banner-pair">
-        <article>
-          <h2>预约出海诊断</h2>
-          <p>先判断方向，再配置课程、团队、渠道与资源。</p>
-          <span>立即预约</span>
-        </article>
-        <article>
-          <h2>加入麦总出海俱乐部</h2>
-          <p>链接课程、资源与全球市场。</p>
-          <span>加入俱乐部</span>
-        </article>
-      </section>
+      <div id="detail-root"></div>
     </main>
 
     <footer>
@@ -125,13 +89,6 @@
           image: "assets/web/consulting.jpg",
           items: ["电话：15064857520", "邮箱：contact@yiqichuhai.com", "咨询内容：课程报名、出海诊断、资源对接", "适合对象：制造企业老板、外贸负责人", "沟通重点：产品、团队、市场、获客路径", "下一步：安排初步需求诊断"]
         },
-        "business-trip": {
-          kicker: "商务考察",
-          title: "组织商务考察活动，链接真实业务资源",
-          summary: "围绕企业出海、展会、渠道和资源对接，组织商务考察与国际交流活动。",
-          image: "assets/web/city.jpg",
-          items: ["考察目标市场与行业机会", "对接展会、协会与平台资源", "安排翻译与商务陪同支持", "协助企业梳理合作机会", "沉淀市场信息与客户线索", "形成后续跟进计划"]
-        },
         join: {
           kicker: "加入俱乐部",
           title: "加入麦总出海俱乐部，链接课程、资源与全球市场",
@@ -160,19 +117,12 @@
           image: "assets/web/hero-training.jpg",
           items: ["76期线下训练营", "近5000家服务企业", "5家合资公司", "百校联盟产教合作", "多平台内容矩阵", "上市公司出海孵化服务"]
         },
-        "boss-course": {
-          kicker: "3天2夜老板课",
-          title: "帮助老板快速建立外贸战略全局",
-          summary: "专为制造企业决策者设计，聚焦外贸战略、市场定位、获客路径和团队搭建。",
-          image: "assets/web/hero-training.jpg",
-          items: ["外贸全体系建立", "市场调研与客户开发", "Google SEO与独立站", "社媒投流与获客", "外贸财税与风险", "团队搭建与KPI"]
-        },
-        "manager-course": {
-          kicker: "28天陪跑",
-          title: "高管陪跑，把外贸动作真正落到执行",
-          summary: "从策略到执行的全流程实战训练，配合真实资源和管家式辅导。",
-          image: "assets/web/course-group.jpg",
-          items: ["124节实操课程", "85节社媒课程", "27节个人提升课", "真实账号演练", "一对一辅导", "销售训练与复盘"]
+        "business-trip": {
+          kicker: "商务考察",
+          title: "组织商务考察活动，链接真实业务资源",
+          summary: "围绕企业出海、展会、渠道和资源对接，组织商务考察与国际交流活动。",
+          image: "assets/web/city.jpg",
+          items: ["考察目标市场与行业机会", "对接展会、协会与平台资源", "安排翻译与商务陪同支持", "协助企业梳理合作机会", "沉淀市场信息与客户线索", "形成后续跟进计划"]
         },
         "resource-match": {
           kicker: "资源对接",
@@ -237,7 +187,7 @@
           image: "assets/web/course-group.jpg",
           items: ["共同出资", "外贸团队", "运营SOP", "获客渠道", "品牌营销", "风险共担利益共享"]
         },
-        "consulting": {
+        consulting: {
           kicker: "出海咨询",
           title: "诊断企业出海现状，明确优先路径",
           summary: "围绕产品、市场、团队和资源，帮助企业找到更清晰的出海起点。",
@@ -274,6 +224,101 @@
         }
       };
 
+      const coursePages = {
+        "boss-course": {
+          theme: "green",
+          kicker: "3天2夜老板战略课",
+          title: "3天建立外贸战略、获客路径与团队落地方案",
+          summary: "专为制造企业老板设计，围绕外贸全体系、数字化获客、财税合规和团队管理，帮助企业完成从认知到行动的外贸起步规划。",
+          image: "assets/web/hero-training.jpg",
+          primaryAction: "预约课程",
+          stagesTitle: "三天课程安排",
+          stages: [
+            {
+              tag: "第一天 4月10日",
+              title: "外贸全体系建立",
+              blocks: [
+                ["上午 9:00-13:00", "外贸快速入门、内贸转外贸思维导入；工贸一体与纯贸易公司优劣分析；国外海关数据与海关数据实操；报关和物流；结算与单证交付。"],
+                ["下午 14:00-18:00", "市场调研与客户开发；处理询盘与报价策略；合同签订中的注意事项；行业及客户背调方法详解。"],
+                ["晚上 19:00-22:00", "关键词获取与关键词库建立；VPN科学上网；外贸实用软件、主流翻译软件安装。"]
+              ]
+            },
+            {
+              tag: "第二天 4月11日",
+              title: "数字化获客与社媒实操",
+              blocks: [
+                ["上午 9:00-12:00", "公司官网搭建步骤与注意事项；关键词SEO；SEO对获客的重要性；GEO生成式引擎优化对新外贸的影响；领英与Facebook设置；ChatGPT注册使用。"],
+                ["下午 13:00-18:00", "2025全球线上采购趋势报告；平台与独立站对比；独立站常见坑及避坑指南；重新认识谷歌广告；关键词库搭建实操；Yandex俄罗斯搜索流量补充；社媒投流与Facebook、LinkedIn操作。"],
+                ["晚上 19:00-21:00", "各大外贸获客平台实操；Google主动搜索；海关数据；各类平台自动提取客户信息插件安装。"]
+              ]
+            },
+            {
+              tag: "第三天 4月12日",
+              title: "团队管理与落地计划",
+              blocks: [
+                ["上午 8:30-11:45", "TikTok全球市场分析；TikTok B端询盘获取方法；TikTok专用软件安装及基础设置；爆款案例分析与快速涨粉秘诀；外贸企业监管部门；进出口退税；外贸财税基础；境外公司开户及财税合规。"],
+                ["下午 13:00-17:30", "货代与贸易公司/工厂沟通细节；外贸人员招聘及KPI制定；外贸业务人员工作安排；从1个人到小团队的搭建逻辑；外贸营销素材准备及0-1起步计划；课程总结。"]
+              ]
+            }
+          ],
+          gains: ["建立外贸战略地图", "掌握海关数据与客户背调", "理解独立站 / SEO / Google广告获客", "明确招聘、KPI与团队管理方式", "形成企业外贸0-1起步计划", "知道财税、货代、合规关键节点"],
+          audience: ["制造企业老板", "内贸转外贸企业", "想搭建自营外贸团队的工厂", "需要明确海外获客路径的决策者"],
+          ctaTitle: "预约3天2夜老板战略课",
+          ctaText: "先搭建老板的外贸战略认知，再确定产品、市场、渠道、团队和投入节奏。"
+        },
+        "manager-course": {
+          theme: "blue",
+          kicker: "28天外贸高管陪跑课",
+          title: "28天任务制陪跑，把外贸动作真正执行到位",
+          summary: "面向外贸负责人和核心执行团队，用阶段任务、真实账号、工具配置、老师反馈和复盘机制，把老板战略拆成每天可执行的外贸动作。",
+          image: "assets/web/course-group.jpg",
+          primaryAction: "了解陪跑课",
+          stagesTitle: "28天陪跑路径",
+          stages: [
+            {
+              tag: "第1阶段",
+              title: "基础搭建与定位",
+              blocks: [
+                ["方向梳理", "外贸认知、企业产品定位、目标市场判断、客户画像梳理。"],
+                ["环境搭建", "账号、工具、邮箱、社媒基础环境搭建。"],
+                ["任务确认", "产品资料、卖点表达、团队分工与任务节奏确认。"]
+              ]
+            },
+            {
+              tag: "第2阶段",
+              title: "获客渠道实操",
+              blocks: [
+                ["搜索获客", "Google搜索、海关数据、关键词库、独立站SEO/GEO路径。"],
+                ["社媒获客", "Facebook、LinkedIn、TikTok等主流社媒获客动作。"],
+                ["工具配置", "AI工具、插件、翻译工具和客户信息提取工具配置。"]
+              ]
+            },
+            {
+              tag: "第3阶段",
+              title: "询盘成交训练",
+              blocks: [
+                ["线索处理", "询盘识别、客户背调、报价策略、邮件与话术训练。"],
+                ["成交节点", "样品、合同、付款、物流、单证、风险节点处理。"],
+                ["客户管理", "CRM客户分层、跟进节奏、成交复盘和线索沉淀。"]
+              ]
+            },
+            {
+              tag: "第4阶段",
+              title: "团队管理与复盘",
+              blocks: [
+                ["管理机制", "销售SOP、岗位职责、KPI、日报周报与会议机制。"],
+                ["团队协同", "外贸负责人管理动作、团队协同和执行检查。"],
+                ["成果复盘", "阶段成果复盘，形成企业自己的外贸执行手册。"]
+              ]
+            }
+          ],
+          gains: ["真实账号完成配置", "形成获客渠道动作表", "完成客户开发素材", "建立询盘跟进机制", "沉淀销售SOP", "形成团队管理复盘机制"],
+          audience: ["外贸负责人、销售主管、运营负责人", "老板已定方向但团队执行不稳定的企业", "需要建立获客到成交SOP的团队", "希望集中提升实操能力的企业"],
+          ctaTitle: "预约28天高管陪跑课",
+          ctaText: "让负责人和执行团队在真实任务中完成获客、跟进、成交和管理动作。"
+        }
+      };
+
       const aliases = {
         "trade-course": "course",
         "seo-geo": "digital-acquisition",
@@ -285,33 +330,149 @@
       };
 
       const key = new URLSearchParams(location.search).get("page") || "club";
-      const data = pageData[aliases[key] || key] || pageData.club;
-      document.title = `${data.kicker}｜麦总出海俱乐部`;
-      document.getElementById("detail-kicker").textContent = data.kicker;
-      document.getElementById("detail-title").textContent = data.title;
-      document.getElementById("detail-summary").textContent = data.summary;
-      document.getElementById("detail-image").src = data.image;
-      document.getElementById("detail-image").alt = data.kicker;
+      const root = document.getElementById("detail-root");
 
-      const grid = document.getElementById("detail-grid");
-      grid.innerHTML = data.items.map((item, index) => `
-        <article>
-          <span>${String(index + 1).padStart(2, "0")}</span>
-          <h3>${item.split("：")[0]}</h3>
-          <p>${item.includes("：") ? item.split("：").slice(1).join("：") : "围绕该模块提供诊断、规划、执行与资源支持。"}</p>
-          <b>输出：清晰动作建议与落地路径</b>
-        </article>
-      `).join("");
+      function renderCourse(data) {
+        document.title = `${data.kicker}｜麦总出海俱乐部`;
+        root.innerHTML = `
+          <section class="course-hero ${data.theme}">
+            <div>
+              <p>${data.kicker}</p>
+              <h1>${data.title}</h1>
+              <span>${data.summary}</span>
+              <div class="course-actions">
+                <a href="detail.html?page=contact">${data.primaryAction}</a>
+                <a class="ghost" href="detail.html?page=join">加入俱乐部</a>
+              </div>
+            </div>
+            <img src="${data.image}" alt="${data.kicker}" />
+          </section>
 
-      const audience = document.getElementById("detail-audience");
-      audience.innerHTML = [
-        ["制造企业老板", "判断方向", "希望从内贸转外贸，先明确市场、产品和投入顺序。"],
-        ["外贸负责人", "提升效率", "需要优化获客、客户管理、团队执行和成交流程。"],
-        ["品牌出海团队", "搭建阵地", "希望建设独立站、社媒矩阵和海外品牌内容。"],
-        ["产业带企业", "整合资源", "需要链接课程、服务商、物流、展会和海外渠道。"]
-      ].map(item => `
-        <article><strong>${item[0]}</strong><span>${item[1]}</span><p>${item[2]}</p></article>
-      `).join("");
+          <section class="panel course-section">
+            <div class="section-title">
+              <h2>${data.stagesTitle}</h2>
+              <a href="detail.html?page=contact">预约咨询</a>
+            </div>
+            <div class="course-timeline">
+              ${data.stages.map(stage => `
+                <article>
+                  <div class="course-stage-head">
+                    <span>${stage.tag}</span>
+                    <h3>${stage.title}</h3>
+                  </div>
+                  <div class="course-blocks">
+                    ${stage.blocks.map(block => `
+                      <div>
+                        <b>${block[0]}</b>
+                        <p>${block[1]}</p>
+                      </div>
+                    `).join("")}
+                  </div>
+                </article>
+              `).join("")}
+            </div>
+          </section>
+
+          <section class="panel course-section">
+            <div class="section-title">
+              <h2>学完获得</h2>
+              <a href="detail.html?page=join">加入俱乐部</a>
+            </div>
+            <div class="course-gains">
+              ${data.gains.map(item => `<article><span></span><b>${item}</b></article>`).join("")}
+            </div>
+          </section>
+
+          <section class="panel course-section">
+            <div class="section-title">
+              <h2>适合对象</h2>
+              <a href="detail.html?page=course">返回课程</a>
+            </div>
+            <div class="course-audience">
+              ${data.audience.map((item, index) => `
+                <article>
+                  <strong>${String(index + 1).padStart(2, "0")}</strong>
+                  <p>${item}</p>
+                </article>
+              `).join("")}
+            </div>
+          </section>
+
+          <section class="course-cta ${data.theme}">
+            <h2>${data.ctaTitle}</h2>
+            <p>${data.ctaText}</p>
+            <div>
+              <a href="detail.html?page=contact">预约咨询</a>
+              <a href="detail.html?page=join">加入俱乐部</a>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderGeneric(data) {
+        document.title = `${data.kicker}｜麦总出海俱乐部`;
+        root.innerHTML = `
+          <section class="service-hero">
+            <div>
+              <p>${data.kicker}</p>
+              <h1>${data.title}</h1>
+              <span>${data.summary}</span>
+            </div>
+            <img src="${data.image}" alt="${data.kicker}" />
+          </section>
+
+          <section class="panel service-directory">
+            <div class="section-title">
+              <h2>服务内容</h2>
+              <a href="index.html">返回首页</a>
+            </div>
+            <div class="directory-grid">
+              ${data.items.map((item, index) => `
+                <article>
+                  <span>${String(index + 1).padStart(2, "0")}</span>
+                  <h3>${item.split("：")[0]}</h3>
+                  <p>${item.includes("：") ? item.split("：").slice(1).join("：") : "围绕该模块提供诊断、规划、执行与资源支持。"}</p>
+                  <b>输出：清晰动作建议与落地路径</b>
+                </article>
+              `).join("")}
+            </div>
+          </section>
+
+          <section class="panel shelf">
+            <div class="section-title">
+              <h2>适合对象</h2>
+              <a href="detail.html?page=join">加入俱乐部</a>
+            </div>
+            <div class="metrics">
+              ${[
+                ["制造企业老板", "判断方向", "希望从内贸转外贸，先明确市场、产品和投入顺序。"],
+                ["外贸负责人", "提升效率", "需要优化获客、客户管理、团队执行和成交流程。"],
+                ["品牌出海团队", "搭建阵地", "希望建设独立站、社媒矩阵和海外品牌内容。"],
+                ["产业带企业", "整合资源", "需要链接课程、服务商、物流、展会和海外渠道。"]
+              ].map(item => `<article><strong>${item[0]}</strong><span>${item[1]}</span><p>${item[2]}</p></article>`).join("")}
+            </div>
+          </section>
+
+          <section class="banner-pair">
+            <article>
+              <h2>预约出海诊断</h2>
+              <p>先判断方向，再配置课程、团队、渠道与资源。</p>
+              <span>立即预约</span>
+            </article>
+            <article>
+              <h2>加入麦总出海俱乐部</h2>
+              <p>链接课程、资源与全球市场。</p>
+              <span>加入俱乐部</span>
+            </article>
+          </section>
+        `;
+      }
+
+      if (coursePages[key]) {
+        renderCourse(coursePages[key]);
+      } else {
+        renderGeneric(pageData[aliases[key] || key] || pageData.club);
+      }
     </script>
   </body>
 </html>
